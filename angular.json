@@ -27,6 +27,7 @@
               }
             ],
             "styles": [
+              "src/styles/override_tailwind_styles.scss",
               "src/styles/styles.scss"
             ],
             "scripts": []
@@ -85,6 +86,7 @@
               }
             ],
             "styles": [
+              "src/styles/override_tailwind_styles.scss",
               "src/styles/styles.scss"
             ],
             "scripts": []
