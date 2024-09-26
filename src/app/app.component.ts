@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, type OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PrimeNGConfig } from 'primeng/api';
+import { Aura } from 'primeng/themes/aura';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+	selector: 'app-root',
+	standalone: true,
+	imports: [RouterOutlet,ButtonModule],
+	templateUrl: './app.component.html',
+	styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'myapp';
+export class AppComponent implements OnInit {
+  config = inject(PrimeNGConfig);
+
+  constructor(){
+    this.config.theme.set({preset:Aura});
+  }
+
+  ngOnInit(){
+    this.config.ripple.set(true);
+  }
 }
